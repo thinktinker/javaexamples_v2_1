@@ -12,17 +12,16 @@
  5. Make your code looks like the file shown below
 
  ```java
- package com.generation.java;
-import java.io.Console;
+import java.util.Scanner;
 
 class MyFirstInput {
-  public static void main(String[] args) {
-    Console console = System.console();
-    System.out.println("Please enter your name ");
-    String name = console.readLine();
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Please enter your name: ");
+        String name = scanner.next();
 
-    System.out.println("My name is "+ name);
-  }
+        System.out.println("Your name is: "+ name);
+    }
 }
 
 ```
