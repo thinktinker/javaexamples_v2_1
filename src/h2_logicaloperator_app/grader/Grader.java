@@ -9,6 +9,6 @@ public class Grader {
     }
 
     public String showGrade(){
-
+        // Implement the logical conditions here.
     }
 }
