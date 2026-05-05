@@ -11,7 +11,7 @@ In this task, you will practice and recall:
 
 
 ## The Scenario
-- Use the base class called MenuItem that handles basic details like name and price and isVegetarian.
+- Use the base class called MenuItem that handles basic details like name and price.
 - Refine the Food subclass to ensure it calculates the final price correctly including tax.
 
 
