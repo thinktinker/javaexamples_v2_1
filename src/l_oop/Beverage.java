@@ -8,27 +8,37 @@ package l_oop;
 public class Beverage extends MenuItem{
 
     private boolean isCold;
+    private static final String[] VALID_BEVERAGES = new String[]{"latte", "cappucino", "expresso"};
+    private static final double MIN_PRICE = 3;
 
     public Beverage(String name, double price, boolean isCold){
-        super(name, price);
+        this.setName(name);
+        this.setPrice(price);
         this.isCold = isCold;
     }
 
     // Create the getters and setters
-    public String getName(){
-        return super.getName();
-    }
+    // rely on the parent class' getter methods: getName(), getPrice()
 
+    // we need to customise setName() to ensure that only valid names are applicable
     public void setName(String name){
-        super.setName(name);
+        String lowerCaseBeverageName = name.toLowerCase();
+        for (String valid_beverage : VALID_BEVERAGES) {
+            if(valid_beverage.equals(lowerCaseBeverageName)){
+                super.setName(name);
+                return;
+            }
+        }
+        throw new IllegalArgumentException("Beverage names allowed: " + String.join(", ", VALID_BEVERAGES));
     }
 
-    public double getPrice(){
-        return super.getPrice();
-    }
-
+    // we need to customise setPrice(), to ensure that the price is a positive value
     public void setPrice(double price){
-        super.setPrice(price);
+        if(price >= MIN_PRICE){
+            super.setPrice(price);
+            return;
+        }
+        throw new IllegalArgumentException("Minimum price of beverage must be $3 and above.");
     }
 
     public boolean isCold() {
