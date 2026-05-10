@@ -1,0 +1,51 @@
+package l_unit_test.tdd;
+
+import org.junit.jupiter.api.*;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+class CalculatorTDDTest {
+
+    double a, b, c, d;
+    CalculatorTDD calculatorTDD;
+
+    @BeforeEach
+    void setup(){
+        a = 10;
+        b = 5;
+        c = 11;
+        d = 3;
+        calculatorTDD = new CalculatorTDD();
+    }
+
+    @Test
+    @DisplayName("method add(10, 5) should return a result of 15.")
+    void add() {
+        assertEquals(15, calculatorTDD.add(a, b));
+    }
+
+    @Test
+    @DisplayName("method multiplication(10, 5) should return a result of 50")
+    void multiplication(){
+        assertEquals(50, calculatorTDD.multiply(a, b));
+    }
+
+    @Test
+    @DisplayName("method subtract(10, 5) should return a result of 5")
+    void subtraction(){
+        assertEquals(5, calculatorTDD.subtract(a, b));
+    }
+
+    @Test
+    @DisplayName("method division(10, 5) should return a result of 2")
+    void division(){
+        assertEquals(2, calculatorTDD.divide(a, b));
+    }
+
+    @Test
+    @DisplayName("method modulus(11, 3) should return a result of 2")
+    void modulus(){
+        assertEquals(2, calculatorTDD.modulus(c, d));
+    }
+
+}
